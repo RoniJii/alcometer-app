@@ -30,13 +30,14 @@ export default function App() {
   }
   return (
     <div className="App">
-     
-      <h1>Calculating alcohol blood level</h1>
       <form onSubmit={handleSubmit}> 
-      <label>Weight <input placeholder="Weight" name="Weight"  onChange={e => setWeight(e.target.value)}/></label>
+      <header>Qemu</header>
+      <div className="runko">
+      <h1 className="otsikko">#Calculating alcohol blood &#60;level.h&#62;</h1>
+      <label>&#60;Weight <input placeholder="<type here>" name="Weight"  onChange={e => setWeight(e.target.value)}/></label>
 
       <div> 
-        <label> Bottles </label>
+        <label> &#60;Bottles </label>
         <select type="number" value={Bottles} onChange={e => setBottles(e.target.value)}>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -47,7 +48,7 @@ export default function App() {
       </div>
 
       <div> 
-        <label> Time </label>
+        <label>&#60;Time </label>
         <select type="number" value={Time} onChange={e => setTime(e.target.value)}>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -57,7 +58,7 @@ export default function App() {
           </select>
       </div>
 
-      <label>Gender
+      <label>&#60;Gender
       <input type="radio" value="Male" name="Gender" defaultChecked onChange={e => setGender(e.target.value)} /> Male
       <input type="radio" value="Female" name="Gender" onChange={e => setGender(e.target.value)}/> Female</label> 
       <div> 
@@ -66,6 +67,7 @@ export default function App() {
           </output>
       </div>
       <button>Calculate</button>
+      </div>
       </form>
     </div>
   );
