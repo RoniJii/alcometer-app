@@ -1,23 +1,22 @@
-import './App.css';
+import "./styles.css";
 import React, { useState } from "react";
 
 export default function App() {
   
   const [count, setCount] = useState(0);
   const [Gender, setGender] = useState("male");
-  const [Bottles, setBottles] = useState(1);
+  const [Bottles, setBottles] = useState(0);
   const [Weight, setWeight] = useState(0);
-  const [Time, setTime] = useState(1);
+  const [Time, setTime] = useState(0);
 
   function handleSubmit(e){
-    e.preventDefault();
     let tulos = 0
     let liters = Bottles * 0.33
     let grams = liters * 8 * 4.5
     let burning = Weight / 10
-    let gramsleft = (grams - (burning * Time))
+    let gramsleft = grams - (burning * Time)
     if (Gender === "male") {
-      tulos = (gramsleft / (Weight * 0.7)) 
+      tulos = gramsleft / (Weight * 0.7) 
     } else {
       tulos = gramsleft / (Weight * 0.6)  
     } 
@@ -37,6 +36,11 @@ export default function App() {
 
       <div> 
         <label> Bottles </label>
+        <input type="number" value={Bottles} onChange={e => setBottles(e.target.value)}/>
+      </div>
+
+      <div> 
+        <label> Bottles </label>
         <select type="number" value={Bottles} onChange={e => setBottles(e.target.value)}>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -44,6 +48,11 @@ export default function App() {
           <option value="4">4</option>
           <option value="5">5</option>
           </select>
+      </div>
+
+      <div> 
+        <label> Time </label>
+        <input type="number" value={Time} onChange={e => setTime(e.target.value)}/>
       </div>
 
       <div> 
@@ -70,5 +79,3 @@ export default function App() {
     </div>
   );
 }
-
-
