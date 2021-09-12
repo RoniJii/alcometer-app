@@ -15,8 +15,8 @@
 body {
     min-width: 200px;
     background-color: #9e046b;
-    background-image: -webkit-linear-gradient(50deg, #2e0020 50%, #fa003670 50%);
-    min-height: 910px;
+    background-image: -webkit-linear-gradient(50deg, #2e0020, #fa003670);
+    min-height: 1910px;
     overflow: hidden;
     font-family: monospace;
 }
