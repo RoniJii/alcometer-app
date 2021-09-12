@@ -5,9 +5,9 @@ export default function App() {
   
   const [count, setCount] = useState(0);
   const [Gender, setGender] = useState("male");
-  const [Bottles, setBottles] = useState(1);
+  const [Bottles, setBottles] = useState(0);
   const [Weight, setWeight] = useState(0);
-  const [Time, setTime] = useState(1);
+  const [Time, setTime] = useState(0);
 
   function handleSubmit(e){
     e.preventDefault();
@@ -39,6 +39,7 @@ export default function App() {
       <div> 
         <label> &#60;Bottles </label>
         <select type="number" value={Bottles} onChange={e => setBottles(e.target.value)}>
+          <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -50,6 +51,7 @@ export default function App() {
       <div> 
         <label>&#60;Time </label>
         <select type="number" value={Time} onChange={e => setTime(e.target.value)}>
+          <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
